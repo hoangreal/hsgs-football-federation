@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="img/Logo.jpg">
+  <style type="text/css">
+.video{
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    text-decoration: none;
+}
+.article {
+    width: 200px;
+    height: 220px;
+    display: inline-block;
+    padding: 5px;
+    margin-left: 80px;
+    vertical-align:top;
+}
+.thumb {
+    width: 200px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+} 
+
+.title{
+  font-size: 12px;
+  display: block;
+  color: #000;
+  outline: none;
+}
+
+  </style>
+ </head>
+ <body>
+   <!--header-->
+   <div class="header">
+     <h1><a href="/HFF" target="_blank"><img src="img/Logo.jpg"/></a></h1>
+   </div>
+   <!-- end header -->
+ 
+   <!-- navigation bar-->
+   <div class="topnav">
+     <ul>
+         <li><a href="/information">Hồ sơ cầu thủ</a></li>
+         <li><a href="/tin-tuc">Tin tức</a></li>
+         <li><a href="/video">Video</a></li>
+    </ul>
+   <!-- end navigation bar -->
+   </div>
+
+<div class="video">
+      <% data.rows.forEach(function(item){ %>
+        <div class="article">
+          <a href="/video:<%= item.id %>">
+            <div class="thumb" style="background-image: url(<%= item.image %>);"></div>
+            <div class="title"><h3><%= item.article %></h3></div>
+          </a>
+        <div class="clear"></div>
+        </div>
+      <% }) %>
+      
+</div>
+</body>
+</html>

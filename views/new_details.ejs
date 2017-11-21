@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><% data.rows.forEach(function(item){ %>
+			<%= item.topic %>
+			<% }) %>
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" href="img/Logo.jpg">
+	<style type="text/css">
+		p {
+    margin: 10px 0 5px 0;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin: 0 auto;
+    padding: 0;
+    text-align: justify;
+}
+	</style>
+</head>
+<body>
+	 <!--header-->
+   <div class="header">
+     <h1><a href="/HFF" target="_blank"><img src="img/Logo.jpg"/></a></h1>
+   </div>
+   <!-- end header -->
+ 
+   <!-- navigation bar-->
+   <div class="topnav">
+     <ul>
+         <li><a href="/information">Hồ sơ cầu thủ</a></li>
+         <li><a href="/tin-tuc">Tin tức</a></li>
+         <li><a href="/video">Video</a></li>
+    </ul>
+	</div>
+    <div class="box">
+	<% data.rows.forEach(function(item){ %>
+		<h1><%= item.topic %></h1><hr>
+		<h2><%= item.description %></h2><br>
+		<span style="margin-left: 400px"><img src="<%= item.tieude %>"></span>
+		<p><%= item.details %></p>
+	<% }) %>
+	</div>
+</body>
+</html>

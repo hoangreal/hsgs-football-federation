@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h3 {
+  color: white;
+  margin-left: 20px;
+}
+div.img {
+    margin-left: 50px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 200px;
+}
+div.img:hover {
+    border: 1px solid #777;
+}
+div.img img {
+    width:100%;
+    height: auto;
+}
+</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồ sơ cầu thủ</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="img/Logo.jpg">
+</head>
+<body>
+    <!--header-->
+  <div class="header">
+    <h1><a href="/HFF" target="_blank"><img src="img/Logo.jpg"></a></h1>
+  </div>
+  <!-- end header -->
+
+  <!-- navigation bar-->
+  <div class="topnav">
+    <ul>
+        <li><a href="/information" target="_blank">Hồ sơ cầu thủ</a></li>
+        <li><a href="/tin-tuc">Tin tức</a></li>
+        <li><a href="/video">Video</a></li>
+    </ul>
+  <!-- end navigation bar -->
+  </div>
+    <h3> Hồ sơ các cầu thủ của HFF <h3>
+    <% data.rows.forEach(function(item){ %>
+    <div class="img">
+      <img src="<%= item.image %>" alt="">
+    </div>
+    <% }) %>
+</body>
+</html>

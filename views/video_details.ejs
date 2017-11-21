@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HFF-HSGS Football Federation</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="img/Logo.jpg" >
+  <style type="text/css">
+    .catit {
+    background: red;
+    color: white;
+    border-radius: 3px;
+    display: inline-block !important;
+    font-size: 15px;
+    line-height: 27px;
+    margin-right: 10px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+}
+iframe, h1, h2, h3, h4, h5, h6, p, .box, .cap, .cln, .clr, .cls, .clx, .fix, .flt, .hlf, .hrt, .hor, .hor a, .hor li, .hor ul, .lft, .lftr, .mlf, .period, .rgt, .rgtr, .ror, .ror a, .ror li, .ror ul, .spl, .spr, .spt, .tit, .trlf, .ver, .ver a, .ver li, .ver ul, .wlf {
+    display: block;
+}
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+.height{
+  height: 10px;
+}
+
+p {
+    margin: 10px 0 5px 0;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin: 0 auto;
+    padding: 0;
+    text-align: justify;
+}
+  </style>
+ </head>
+ <body>
+   <!--header-->
+   <div class="header">
+     <h1><a href="/HFF" target="_blank"><img src="img/Logo.jpg"/></a></h1>
+   </div>
+   <!-- end header -->
+ 
+   <!-- navigation bar-->
+   <div class="topnav">
+     <ul>
+         <li><a href="/information">Hồ sơ cầu thủ</a></li>
+         <li><a href="/tin-tuc">Tin tức</a></li>
+         <li><a href="/video">Video</a></li>
+    </ul>
+   <!-- end navigation bar -->
+   </div>
+ 
+  <div class="box">
+      <a class="catit lft" href="/video">Video</a>
+      <div class="height"></div>
+      <% data.rows.forEach(function(item){ %>
+        <span style="margin-left: 400px;"><iframe width="560" height="315" src="<%= item.link %>" frameborder="0" allowfullscreen controls></iframe></span>
+        <p><%= item.details %></p>
+      <% }) %>
+  </div>
+ </body>
+ </html> 
